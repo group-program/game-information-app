@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 
 interface Props {
-  params: { id?: string };
+  params: Promise<{ id?: string }>;
 }
 
 export default async function ArticlePage({ params }: Props) {
   // `params` を非同期に取得する
-  const id = await Promise.resolve(params.id);
+  const { id } = await params;
 
   console.log("Fetching article ID:", id);
 
