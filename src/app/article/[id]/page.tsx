@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-
+import link from "./articleData";
 interface Props {
   params: Promise<{ id?: string }>;
 }

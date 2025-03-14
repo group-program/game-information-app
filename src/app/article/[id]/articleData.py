@@ -12,6 +12,10 @@ soup = BeautifulSoup(response.text, 'html.parser')
 title = soup.title.string
 print(f"ページのタイトル: {title}")
 
+#記事の全体を取得
+full_text = soup.get_text(strip=True)
+print("ページ全体のテキスト:", full_text)
+
 # すべてのリンクを取得
 links = soup.find_all('a')
 for link in links:
